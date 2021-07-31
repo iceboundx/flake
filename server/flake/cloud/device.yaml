@@ -1,0 +1,28 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: cloud-test
+  labels:
+    description: 'test'
+spec:
+  deviceModelRef:
+    name: counter-model
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: ''
+            operator: In
+            values:
+              - edge-node
+
+status:
+  twins:
+    - propertyName: status
+      desired:
+        metadata:
+          type: string
+        value: 'OFF'
+      reported:
+        metadata:
+          type: string
+        value: '0'

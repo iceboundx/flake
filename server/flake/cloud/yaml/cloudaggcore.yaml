@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: cloudaggcore
+  name: cloudaggcore
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      k8s-app: cloudaggcore
+  template:
+    metadata:
+      labels:
+        k8s-app: cloudaggcore
+    spec:
+      hostNetwork: true
+      containers:
+        - name: aggcore
+          image: flake/cloud-aggcore:1.0.1
+          imagePullPolicy: IfNotPresent
+          command: ["python3","server.py","30","0.0.0.0:6666"]
+          volumeMounts:
+            - name: aggcore
+              mountPath: /data
+          ports:
+            - name: grpc
+              containerPort: 6666
+              hostPort: 6666
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
+      volumes:
+        - name: aggcore
+          hostPath:
+            path: "/etc/aggcore"
+      nodeSelector:
+          node-role.kubernetes.io/master: ""
+

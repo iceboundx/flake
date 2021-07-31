@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: edge1aggcore
+  name: edge1aggcore
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      k8s-app: edge1aggcore
+  template:
+    metadata:
+      labels:
+        k8s-app: edge1aggcore
+    spec:
+      hostNetwork: true
+      containers:
+        - name: edge1-aggcore
+          image: flake/edgeaggcore:0.0.2
+          imagePullPolicy: IfNotPresent
+          command: ["python3","server.py","30","0.0.0.0:6666"]
+          ports:
+            - name: grpc
+              containerPort: 6666
+              hostPort: 6666
+      nodeSelector:
+        flake-node: edge1
+

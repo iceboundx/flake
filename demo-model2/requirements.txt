@@ -1,0 +1,6 @@
+torch==1.5.0
+torchvision==0.6.0
+numpy==1.19.5
+grpcio==1.32.0
+flwr==0.15.0
+grpc==1.0.0

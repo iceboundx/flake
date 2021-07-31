@@ -1,0 +1,8 @@
+FROM codenvy/cpp_gcc 
+
+RUN mkdir /opt/voltest
+ADD voltest.cpp /opt/voltest
+WORKDIR /opt/voltest
+RUN g++ voltest.cpp -o voltest
+VOLUME ["/opt/data", "/opt/data"]
+CMD ["./voltest"]

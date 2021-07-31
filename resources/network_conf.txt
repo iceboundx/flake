@@ -1,0 +1,3 @@
+192.168.31.227 flakecloud.com
+192.168.31.10 flakeedge1.com
+192.168.31.96 flakeedge2.com

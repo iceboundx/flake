@@ -1,0 +1,11 @@
+DEBUG flower 2021-02-10 18:47:28,586 | connection.py:36 | ChannelConnectivity.IDLE
+DEBUG flower 2021-02-10 18:47:28,587 | connection.py:36 | ChannelConnectivity.CONNECTING
+INFO flower 2021-02-10 18:47:28,587 | app.py:61 | Opened (insecure) gRPC connection
+DEBUG flower 2021-02-10 18:47:28,634 | connection.py:36 | ChannelConnectivity.READY
+DEBUG flower 2021-02-10 18:51:12,774 | connection.py:68 | Insecure gRPC channel closed
+INFO flower 2021-02-10 18:51:12,774 | app.py:72 | Disconnect and shut down
+DEBUG flower 2021-02-10 18:51:53,610 | connection.py:36 | ChannelConnectivity.IDLE
+DEBUG flower 2021-02-10 18:51:53,611 | connection.py:36 | ChannelConnectivity.CONNECTING
+INFO flower 2021-02-10 18:51:53,611 | app.py:61 | Opened (insecure) gRPC connection
+DEBUG flower 2021-02-10 18:51:53,689 | connection.py:36 | ChannelConnectivity.READY
+DEBUG flower 2021-02-10 18:53:09,975 | connection.py:68 | Insecure gRPC channel closed
